@@ -3,7 +3,6 @@ Name:		imms
 Version:	3.0.2
 Release:	%mkrel 1
 Source0:	http://prdownloads.sourceforge.net/imms/%{name}-%{version}.tar.bz2
-Patch: http://www.luminal.org/files/imms/imms-audacious.patch
 Patch2: imms-3.0.2-configure.patch
 Patch3: imms-3.0.2-build.patch
 License:	GPL
@@ -23,7 +22,6 @@ BuildRequires:	sox
 BuildRequires:	sqlite3-devel >= 3.0
 BuildRequires:	taglib-devel
 BuildRequires:	xmms-devel >= 1.2.7
-BuildRequires:	audacious-devel
 
 %description
 IMMS is an adaptive playlist framework that tracks your listening patterns and
@@ -49,7 +47,6 @@ It's major features include:
 Currently plugins for the following music players plug are available:
 
  * XMMS              - package xmms-imms
- * Audacious Media Player - package audacious-imms
 
 
 %package -n xmms-%{name}
@@ -62,24 +59,8 @@ Requires:	imms
 %description -n xmms-%{name}
 This is the Intelligent Multimedia Management System plugin for XMMS.
 
-
-%package -n audacious-%{name}
-Group:		Sound
-Summary:	IMMS plugin for the Beep Media Player
-Provides:	imms-plugin
-Requires:	audacious
-Requires:	imms
-Provides: beep-media-player-imms
-Obsoletes: beep-media-player-imms
-
-%description -n audacious-%{name}
-This is the Intelligent Multimedia Management System plugin for the Beep Media
-Player.
-
-
 %prep
 %setup -q
-%patch -p1 -b .audacious
 %patch2 -p1
 %patch3 -p1
 
@@ -93,9 +74,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %__install -d %{buildroot}/%{_libdir}/xmms/General/
 %__install build/libxmmsimms.so %{buildroot}/%{_libdir}/xmms/General/
-
-%__install -d %{buildroot}/%{_libdir}/audacious/General/
-%__install build/libaudaciousimms2.so %{buildroot}/%{_libdir}/audacious/General/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -115,10 +93,4 @@ rm -rf $RPM_BUILD_ROOT
 %files -n xmms-%{name}
 %defattr(0755,root,root,0755)
 %{_libdir}/xmms/General/*
-
-
-%files -n audacious-%{name}
-%defattr(0755,root,root,0755)
-%{_libdir}/audacious/General/*
-
 
