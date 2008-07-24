@@ -1,7 +1,7 @@
 Summary:	Intelligent Multimedia Management System
 Name:		imms
 Version:	3.0.2
-Release:	%mkrel 1
+Release:	%mkrel 3
 Source0:	http://prdownloads.sourceforge.net/imms/%{name}-%{version}.tar.bz2
 Patch2: imms-3.0.2-configure.patch
 Patch3: imms-3.0.2-build.patch
