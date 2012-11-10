@@ -1,0 +1,11 @@
+--- imms-3.0.2/configure.ac~	2005-12-27 00:12:03.000000000 +0100
++++ imms-3.0.2/configure.ac	2007-02-27 09:44:20.000000000 +0100
+@@ -77,7 +77,7 @@
+   static char rand_state[256];
+   initstate_r(0, rand_state, sizeof(rand_state), &rand_data);
+   exit(0);
+-}], initstate_r_works=yes,, ])
++}], initstate_r_works=yes,, )
+ 
+ if test "$initstate_r_works" != "yes"; then
+     AC_MSG_RESULT([no])
