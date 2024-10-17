@@ -7,7 +7,7 @@ Patch2: imms-3.0.2-configure.patch
 Patch3: imms-3.0.2-build.patch
 License:	GPL
 Group:		Sound
-Url:		http://www.luminal.org/wiki/index.php/IMMS/IMMS
+Url:		https://www.luminal.org/wiki/index.php/IMMS/IMMS
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 Requires:	sox
 Requires:	imms-plugin
