@@ -11,6 +11,10 @@ Url:		https://www.luminal.org/wiki/index.php/IMMS/IMMS
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 Requires:	sox
 Requires:	imms-plugin
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	autoconf2.5
 BuildRequires:	fftw-devel >= 3.0
 BuildRequires:	torch-devel >= 3
